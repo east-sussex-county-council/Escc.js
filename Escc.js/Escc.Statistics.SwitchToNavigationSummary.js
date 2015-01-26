@@ -1,0 +1,2 @@
+﻿/* This is a bookmarklet to switch from any page on the website to the navigation summary report for that page */
+javascript: void (document.location.href = 'https://www.google.com/analytics/web/#report/content-pages/a22393101w44110300p44142403/%3F_r.drilldown%3Danalytics.pagePath%3A' + encodeURIComponent(document.URL.substring(document.URL.indexOf('/', 9)) + '%26_r.tabId%3Dnavigationsummary'))
