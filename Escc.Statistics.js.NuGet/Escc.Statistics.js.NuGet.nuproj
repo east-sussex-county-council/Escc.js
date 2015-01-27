@@ -16,5 +16,10 @@
   <ItemGroup>
     <Compile Include="Escc.Statistics.js.NuGet.nuspec" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Escc.Statistics.js.targets">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\NuBuild\v1\NuBuild.targets" />
 </Project>
