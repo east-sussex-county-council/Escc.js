@@ -20,7 +20,7 @@
             .click(function ()
             {
                 // Track as virtual page view from Oct 2011 (not as event, because that doesn't support goals or in-page analytics)
-                if (typeof (_gaq) != 'undefined') _gaq.push(['_trackPageview', $(this).attr("href").toLowerCase()]);
+                if (typeof (ga) !== 'undefined') ga('send', 'pageview', $(this).attr("href").toLowerCase());
             });
 
             // Act on all external links
@@ -58,14 +58,14 @@
             .click(function ()
             {
                 // Track in Google Analytics
-                if (typeof (_gaq) != 'undefined') _gaq.push(['_trackEvent', 'external links', document.URL, $(this).attr("href"), 0]);
+                if (typeof(ga) !== 'undefined') ga('send', 'event', 'external links', document.URL, $(this).attr("href"), 0);
             });
 
             // Track mailto: links in Google Analytics
             // Include them with "external links" so that it's fewer clicks to see where a user went from a page. Can separate the types by filtering on "mailto" if needed.
             $("a[href^='mailto:']").click(function ()
             {
-                if (typeof (_gaq) != 'undefined') _gaq.push(['_trackEvent', 'external links', document.URL, $(this).attr("href"), 0]);
+                if (typeof(ga) !== 'undefined') ga('send', 'event', 'external links', document.URL, $(this).attr("href"), 0);
             });
         }
     }

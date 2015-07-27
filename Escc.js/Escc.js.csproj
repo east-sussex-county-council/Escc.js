@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Escc.DocumentsInNewWindow.js" />
+    <Content Include="Escc.Statistics.min.js">
+      <DependentUpon>Escc.Statistics.js</DependentUpon>
+    </Content>
     <Content Include="Escc.Statistics.SwitchToExternalLinks.js" />
     <Content Include="Escc.Statistics.SwitchToInPageAnalytics.js" />
     <Content Include="Escc.Statistics.SwitchToNavigationSummary.js" />
@@ -57,7 +60,11 @@
     <Content Include="Escc.Statistics.js" />
     <Content Include="yuicompressor-2.4.6.jar" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Escc.Statistics.min.js.map">
+      <DependentUpon>Escc.Statistics.min.js</DependentUpon>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if "$(ConfigurationName)" == "Release" del "$(ProjectDir)*.min.js" /Q
