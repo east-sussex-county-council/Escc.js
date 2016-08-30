@@ -1,6 +1,38 @@
 ﻿// not on public library computer
 if (typeof (jQuery) != 'undefined' && navigator.userAgent.indexOf("ESCC Libraries") == -1)
 {
+    // Polyfill for old IE version detection. This is a cut-down version of the $.browser code removed in JQuery 1.9.0, made available at https://gist.github.com/adeelejaz/4714079
+    (function (jQuery, window, undefined) {
+        "use strict";
+
+        var matched, browser;
+
+        jQuery.uaMatch = function (ua) {
+            ua = ua.toLowerCase();
+
+            var match = /(msie) ([\w.]+)/.exec(ua) || [];
+
+            return {
+                browser: match[1] || "",
+                version: match[2] || "0"
+            };
+        };
+
+        // Don't clobber any existing jQuery.browser in case it's different
+        if (!jQuery.browser) {
+            matched = jQuery.uaMatch(window.navigator.userAgent);
+            browser = {};
+
+            if (matched.browser) {
+                browser[matched.browser] = true;
+                browser.version = matched.version;
+            }
+
+            jQuery.browser = browser;
+        }
+
+    })(jQuery, window);
+
     $(function ()
     {
         // IE <=6 uses plugins for all the formats; others only for PDF
