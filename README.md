@@ -2,6 +2,8 @@
 
 A collection of JavaScript libraries and bookmarklets designed to be re-used across multiple East Sussex County Council websites.
 
+[Chutzpah Test Adapter for the Test Explorer](https://marketplace.visualstudio.com/items?itemName=vs-publisher-2795.ChutzpahTestAdapterfortheTestExplorer) needs to be installed in Visual Studio to run the unit tests.
+
 ## Escc.Statistics.js
 
 This configuration helper for Google Analytics tracks clicks on document downloads as virtual page views, and tracks clicks on external links and mailto: links as events. It also helps to track multiple subdomains as a single website.
@@ -47,3 +49,32 @@ A JavaScript library which causes documents in formats such as PDF and Word to o
 ## Escc.Statistics.SwitchTo*.js
 
 These are bookmarklets for switching quickly from a web page to the Google Analytics reports for that page.
+
+## cascading-content.js
+
+When an element needs to appear specific parts of a website, `cascading-content.js` can be used to implement cascade and inherit rules to control where it is used. For example:
+
+	if (typeof (jQuery) !== 'undefined' && typeof (cascadingContentFilter) !== 'undefined') {
+	
+        $.ajax({ dataType: "json", url: "https://example.org/get-some-data" }).done(function (data) {
+
+            // Note: Must filter inheritance before cascade. If an ancestor of the current page 
+			// blocks inheritance it needs to be considered when deciding how far up the tree 
+			// to inherit, before it potentially gets removed if it blocks cascade as well.
+            // 
+            // eg
+            // --- [has cascading alert]
+            //     --- [has alert with no cascade, no inherit]
+            //         --- [allows inherit, but should not inherit top-level alert]
+            // 
+            var cascade = cascadingContentFilter();
+            data = cascade.filterByUrl(data, window.location.pathname);
+            data = cascade.filterByInherit(data, window.location.pathname);
+            data = cascade.filterByCascade(data, window.location.pathname);
+            data = cascade.filterIfBlank(data, function (item) { return !$.trim(item.ExampleProperty); });
+
+            if (data.length) {
+                // display the content
+            }
+        });
+	}

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Escc_CascadingContent_Js Include="$(MSBuildProjectDirectory)\..\packages\Escc.CascadingContent.js.1.0.0\Content\js\libs\**\*.*"/>
+  </ItemGroup>
+
+  <Target Name="Escc_CascadingContent_Js_CopyFiles" BeforeTargets="PrepareForBuild">
+    <Message Text="Copying Escc.CascadingContent.js files to js\libs" />
+    <Copy
+        SourceFiles="@(Escc_CascadingContent_Js)"
+        DestinationFiles="@(Escc_CascadingContent_Js->'.\js\libs\%(RecursiveDir)%(Filename)%(Extension)')"
+        />
+  </Target>
+</Project>

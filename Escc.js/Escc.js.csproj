@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cascading-content.js" />
     <Content Include="Escc.DocumentsInNewWindow.js" />
     <Content Include="Escc.Statistics.min.js">
       <DependentUpon>Escc.Statistics.js</DependentUpon>
@@ -62,10 +63,15 @@
     <Content Include="Escc.Statistics.SwitchToNavigationSummary.js" />
     <Content Include="EsccWebTeam.UI.Navigation.js" />
     <Content Include="Escc.Statistics.js" />
+    <Content Include="tests\cascading-content.tests.js" />
+    <Content Include="tests\chai.js" />
+    <Content Include="tests\jquery-3.2.1.min.js" />
     <Content Include="yuicompressor-2.4.6.jar" />
   </ItemGroup>
   <ItemGroup>
     <None Include="build-nuget.cmd" />
+    <None Include="cascading-content.js.nuspec" />
+    <None Include="cascading-content.js.targets" />
     <None Include="Escc.DocumentsInNewWindow.js.nuspec" />
     <None Include="Escc.DocumentsInNewWindow.js.targets" />
     <None Include="Escc.Statistics.js.nuspec" />
@@ -74,10 +80,15 @@
       <DependentUpon>Escc.Statistics.min.js</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="tests\chutzpah.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if "$(ConfigurationName)" == "Release" del "$(ProjectDir)*.min.js" /Q
+if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)cascading-content.js" &gt; "$(ProjectDir)cascading-content.min.js"
 if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)Escc.Statistics.js" &gt; "$(ProjectDir)Escc.Statistics.min.js"
 if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)Escc.DocumentsInNewWindow.js" &gt; "$(ProjectDir)Escc.DocumentsInNewWindow.min.js"
 if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)Escc.Statistics.SwitchToExternalLinks.js" &gt; "$(ProjectDir)Escc.Statistics.SwitchToExternalLinks.min.js"

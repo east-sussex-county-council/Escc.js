@@ -1,0 +1,8 @@
+﻿{
+    "Framework": "mocha",
+    "MochaInterface": "bdd",
+    "References" : [
+      { "Path": "chai.js" },
+      { "Path": "jquery-3.2.1.min.js" }
+    ]
+}
