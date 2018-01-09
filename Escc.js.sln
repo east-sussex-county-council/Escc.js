@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escc.js", "Escc.js\Escc.js.csproj", "{A5BAB6BA-EEC3-47A2-9507-4AB20CEF8255}"
-EndProject
-Project("{E09DD79A-4488-4AB9-8D3F-A7EEE78BF432}") = "Escc.Statistics.js.NuGet", "Escc.Statistics.js.NuGet\Escc.Statistics.js.NuGet.nuproj", "{A5339485-2583-4D8A-A59D-7F488241C061}"
-EndProject
-Project("{E09DD79A-4488-4AB9-8D3F-A7EEE78BF432}") = "Escc.DocumentsInNewWindow.js.NuGet", "Escc.DocumentsInNewWindow.js.NuGet\Escc.DocumentsInNewWindow.js.NuGet.nuproj", "{A25BCF8A-2370-4E99-8ABE-36E2A8E68738}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{074956F5-A63F-44B3-93DB-79B334CD0691}"
 	ProjectSection(SolutionItems) = preProject
@@ -26,16 +22,11 @@ Global
 		{A5BAB6BA-EEC3-47A2-9507-4AB20CEF8255}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5BAB6BA-EEC3-47A2-9507-4AB20CEF8255}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5BAB6BA-EEC3-47A2-9507-4AB20CEF8255}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5339485-2583-4D8A-A59D-7F488241C061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5339485-2583-4D8A-A59D-7F488241C061}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5339485-2583-4D8A-A59D-7F488241C061}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5339485-2583-4D8A-A59D-7F488241C061}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A25BCF8A-2370-4E99-8ABE-36E2A8E68738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A25BCF8A-2370-4E99-8ABE-36E2A8E68738}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A25BCF8A-2370-4E99-8ABE-36E2A8E68738}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A25BCF8A-2370-4E99-8ABE-36E2A8E68738}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A42985B-FC9C-40C3-9116-6CBB25B5FB1E}
 	EndGlobalSection
 EndGlobal

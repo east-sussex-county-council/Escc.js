@@ -33,3 +33,5 @@ _ReSharper*/
 *.scc
 [Ss]cripts*/
 *.min.js
+packages
+.vs

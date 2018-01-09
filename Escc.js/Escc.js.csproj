@@ -65,16 +65,23 @@
     <Content Include="yuicompressor-2.4.6.jar" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="build-nuget.cmd" />
+    <None Include="Escc.DocumentsInNewWindow.js.nuspec" />
+    <None Include="Escc.DocumentsInNewWindow.js.targets" />
+    <None Include="Escc.Statistics.js.nuspec" />
+    <None Include="Escc.Statistics.js.targets" />
     <None Include="Escc.Statistics.min.js.map">
       <DependentUpon>Escc.Statistics.min.js</DependentUpon>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if "$(ConfigurationName)" == "Release" del "$(ProjectDir)*.min.js" /Q
 if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)Escc.Statistics.js" &gt; "$(ProjectDir)Escc.Statistics.min.js"
 if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)Escc.DocumentsInNewWindow.js" &gt; "$(ProjectDir)Escc.DocumentsInNewWindow.min.js"
-if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)Escc.Statistics.SwitchToExternalLinks.js" &gt; "$(ProjectDir)Escc.Statistics.SwitchToExternalLinks.min.js"</PostBuildEvent>
+if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)Escc.Statistics.SwitchToExternalLinks.js" &gt; "$(ProjectDir)Escc.Statistics.SwitchToExternalLinks.min.js"
+if "$(ConfigurationName)"=="Release" "$(ProjectDir)build-nuget.cmd" $(ProjectDir)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
