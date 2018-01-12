@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cascading-content.js" />
+    <Content Include="embed-youtube.js" />
     <Content Include="Escc.DocumentsInNewWindow.js" />
     <Content Include="Escc.Statistics.min.js">
       <DependentUpon>Escc.Statistics.js</DependentUpon>
@@ -70,6 +71,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="build-nuget.cmd" />
+    <None Include="embed-youtube.js.nuspec" />
+    <None Include="embed-youtube.js.targets" />
     <None Include="cascading-content.js.nuspec" />
     <None Include="cascading-content.js.targets" />
     <None Include="Escc.DocumentsInNewWindow.js.nuspec" />
@@ -88,10 +91,11 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if "$(ConfigurationName)" == "Release" del "$(ProjectDir)*.min.js" /Q
-if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)cascading-content.js" &gt; "$(ProjectDir)cascading-content.min.js"
 if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)Escc.Statistics.js" &gt; "$(ProjectDir)Escc.Statistics.min.js"
 if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)Escc.DocumentsInNewWindow.js" &gt; "$(ProjectDir)Escc.DocumentsInNewWindow.min.js"
 if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)Escc.Statistics.SwitchToExternalLinks.js" &gt; "$(ProjectDir)Escc.Statistics.SwitchToExternalLinks.min.js"
+if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)cascading-content.js" &gt; "$(ProjectDir)cascading-content.min.js"
+if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)embed-youtube.js" &gt; "$(ProjectDir)embed-youtube.min.js"
 if "$(ConfigurationName)"=="Release" "$(ProjectDir)build-nuget.cmd" $(ProjectDir)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

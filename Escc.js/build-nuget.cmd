@@ -4,3 +4,4 @@ set nuspec=%nuspec:\=\\%
 nuget pack "%nuspec%Escc.DocumentsInNewWindow.js.nuspec"
 nuget pack "%nuspec%Escc.Statistics.js.nuspec"
 nuget pack "%nuspec%cascading-content.js.nuspec"
+nuget pack "%nuspec%embed-youtube.js.nuspec"

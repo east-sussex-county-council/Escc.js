@@ -78,3 +78,20 @@ When an element needs to appear specific parts of a website, `cascading-content.
             }
         });
 	}
+
+## embed-youtube.js
+
+Include this library on a page to convert the following markup into an embedded YouTube video that resizes responsively within its parent element. This is a useful way to insert embedded videos using a rich text editor such as [TinyMCE](https://www.tinymce.com/).
+
+	<span class="embed"><a href="https://www.youtube.com/watch?v=GRCSZIX81U4">Watch video</a></span>
+
+or
+
+	<a class="embed" href="https://www.youtube.com/watch?v=GRCSZIX81U4">Watch video</a>
+
+You can also configure the following options by setting them as `data*` attributes anywhere on the page:
+
+ * **data-video-width="int"**     - sets a fixed width for videos on the page
+ * **data-video-height="int"**    - sets a fixed height for videos on the page
+ * **data-video-max-width="int"** - updates the maximum width for videos (default 600px)
+ * **data-video-resize="bool"**   - if set to false, disables responsive resizing of video
