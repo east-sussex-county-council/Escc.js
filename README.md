@@ -95,3 +95,27 @@ You can also configure the following options by setting them as `data*` attribut
  * **data-video-height="int"**    - sets a fixed height for videos on the page
  * **data-video-max-width="int"** - updates the maximum width for videos (default 600px)
  * **data-video-resize="bool"**   - if set to false, disables responsive resizing of video
+
+## Escc.GoogleMaps.js
+
+This package includes `google-maps.min.js` and `embed-google-maps.min.js`.
+
+Include `google-maps.min.js` on a page to gain access to a selection of utility functions on a global `esccGoogleMaps` object which help when working with the Google Maps API.
+
+Include `embed-google-maps.min.js` as well to automatically transform links like this into an embedded Google Map:
+
+	<span class="embed">
+		<a href="https://maps.google.co.uk/maps/ms?msid=213884658669219615993.00050357ac950f9508213&amp;msa=0&amp;ll=50.93301,0.796337&amp;spn=0.025343,0.066047">Embedded map</a>
+	</span>
+
+or
+
+	<a class="embed" href="https://maps.google.co.uk/maps/ms?msid=213884658669219615993.00050357ac950f9508213&amp;msa=0&amp;ll=50.93301,0.796337&amp;spn=0.025343,0.066047">Embedded map</a>
+
+This requires you to set the Google Maps API key in a `data-google-maps-api-key` attribute somewhere on the page. Alternatively the API key can come from elsewhere if you call the embed function separately:
+
+	function embedMaps(apiKeyFromSomewhere) {
+		if (esccGoogleMaps) {
+			esccGoogleMaps.loadGoogleMapsApi({ apiKey: apiKeyFromSomewhere, callback: "esccEmbedLinkedGoogleMap" });
+		}
+	}

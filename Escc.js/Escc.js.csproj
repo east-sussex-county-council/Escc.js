@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cascading-content.js" />
+    <Content Include="embed-google-maps.js" />
     <Content Include="embed-youtube.js" />
     <Content Include="Escc.DocumentsInNewWindow.js" />
     <Content Include="Escc.Statistics.min.js">
@@ -64,6 +65,7 @@
     <Content Include="Escc.Statistics.SwitchToNavigationSummary.js" />
     <Content Include="EsccWebTeam.UI.Navigation.js" />
     <Content Include="Escc.Statistics.js" />
+    <Content Include="google-maps.js" />
     <Content Include="tests\cascading-content.tests.js" />
     <Content Include="tests\chai.js" />
     <Content Include="tests\jquery-3.2.1.min.js" />
@@ -71,6 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="build-nuget.cmd" />
+    <None Include="google-maps.js.nuspec" />
+    <None Include="google-maps.js.targets" />
     <None Include="embed-youtube.js.nuspec" />
     <None Include="embed-youtube.js.targets" />
     <None Include="cascading-content.js.nuspec" />
@@ -96,6 +100,8 @@ if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4
 if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)Escc.Statistics.SwitchToExternalLinks.js" &gt; "$(ProjectDir)Escc.Statistics.SwitchToExternalLinks.min.js"
 if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)cascading-content.js" &gt; "$(ProjectDir)cascading-content.min.js"
 if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)embed-youtube.js" &gt; "$(ProjectDir)embed-youtube.min.js"
+if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)google-maps.js" &gt; "$(ProjectDir)google-maps.min.js"
+if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)embed-google-maps.js" &gt; "$(ProjectDir)embed-google-maps.min.js"
 if "$(ConfigurationName)"=="Release" "$(ProjectDir)build-nuget.cmd" $(ProjectDir)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
