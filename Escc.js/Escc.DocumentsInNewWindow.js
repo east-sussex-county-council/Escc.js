@@ -84,7 +84,7 @@ if (typeof (jQuery) != 'undefined' && navigator.userAgent.indexOf("ESCC Librarie
             }
 
             // ...and add an audible warning of the change of context
-            link.append('<span class="aural"> (opens new window)</span>');
+            link.append('<span class="aural sr-only"> (opens new window)</span>');
 
             // ...and make it open a new window if it wouldn't already do that
             var href = this.getAttribute('href').toLowerCase();
