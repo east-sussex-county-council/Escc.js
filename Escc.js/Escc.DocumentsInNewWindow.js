@@ -44,7 +44,7 @@ if (typeof (jQuery) != 'undefined' && navigator.userAgent.indexOf("ESCC Librarie
 
         // Ensure these extensions open in a new window
         $("a")
-        .filter(function () { return /(\.pdf|\.rtf|\.doc|\.docx|\.dot|\.dotx|\.xls|\.xlsx|\.xlt|\.xltx|\.csv|\.ppt|\.pptx|\.pps|\.ppsx|\.pot|\.potx)$/i.test($(this).attr('href')); })
+        .filter(function () { return /(\.pdf|\.rtf|\.doc|\.docx|\.dot|\.dotx|\.xls|\.xlsx|\.xlt|\.xltx|\.csv|\.ppt|\.pptx|\.pps|\.ppsx|\.pot|\.potx|\.jpg)$/i.test($(this).attr('href')); })
         .each(function ()
         {
             var link = $(this);
