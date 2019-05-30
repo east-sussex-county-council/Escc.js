@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/MsBuild/2003">
+
+  <UsingTask TaskName="JavaScriptCompressorTask" AssemblyFile="$(MSBuildProjectDirectory)\bin\$(ConfigurationName)\Yahoo.Yui.Compressor.MsBuild.dll" />
+
+  <Target Name="Minimize" Condition="'$(ConfigurationName)' == 'Release'">
+    <JavaScriptCompressorTask SourceFiles="Escc.Statistics.js" OutputFile="Escc.Statistics.min.js" />
+    <JavaScriptCompressorTask SourceFiles="Escc.DocumentsInNewWindow.js" OutputFile="Escc.DocumentsInNewWindow.min.js" />
+    <JavaScriptCompressorTask SourceFiles="Escc.Statistics.SwitchToExternalLinks.js" OutputFile="Escc.Statistics.SwitchToExternalLinks.min.js" />
+    <JavaScriptCompressorTask SourceFiles="cascading-content.js" OutputFile="cascading-content.min.js" />
+    <JavaScriptCompressorTask SourceFiles="embed-youtube.js" OutputFile="embed-youtube.min.js" />
+    <JavaScriptCompressorTask SourceFiles="google-maps.js" OutputFile="google-maps.min.js" />
+    <JavaScriptCompressorTask SourceFiles="embed-google-maps.js" OutputFile="embed-google-maps.min.js" />
+  </Target>
+</Project>
