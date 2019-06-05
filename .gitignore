@@ -33,5 +33,6 @@ _ReSharper*/
 *.scc
 [Ss]cripts*/
 *.min.js
+!jquery*.min.js
 packages
 .vs
